@@ -11,14 +11,25 @@ These urls are restricted to authenticated users. The authentication mechanism i
 The gateway also routes all proxied pages to a (legacy) openIMIS installation.
 The (sub)domain where legacy openIMIS is installed must be provided in the LEGACY_OPENIMIS_HOST build argument (example: `--build-arg LEGACY_OPENIMIS_HOST=demo.openimis.org`)
 
+The gateway auto-generate a self-signed certificate, which should be replaced by a certificate registered for your domain.
+
 ## To add a user
-- connect to the running docker container (`docker exec -it <container id> /bin/sh` 
-- issue the command `/script/add-user.sh <username> <userpassword>`
+- connect to the running docker container (`docker exec -it <container id> /bin/sh`
+- by default, you are in the /script directory (`cd /script` otherwize)
+- issue the command `./add-user.sh <username> <userpassword>`
 
 ## To change a user's password
 - connect to the running docker container (`docker exec -it <container id> /bin/sh` 
-- issue the command `/script/update-user.sh <username> <new userpassword>`
+- by default, you are in the /script directory (`cd /script` otherwize)
+- issue the command `./update-user.sh <username> <new userpassword>`
 
 ## To remove a user
 - connect to the running docker container (`docker exec -it <container id> /bin/sh` 
-- issue the command `/script/remove-user.sh <username>`
+- by default, you are in the /script directory (`cd /script` otherwize)
+- issue the command `./remove-user.sh <username>`
+
+## To obtain a SSL certificate signed by letsencrypt
+- connect to the running docker container (`docker exec -it <container id> /bin/sh` 
+- by default, you are in the /script directory (`cd /script` otherwize)
+- issue the command `certbot --nginx -d <your.openimis.domaine>
+- stop/start the container
