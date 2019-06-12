@@ -32,5 +32,5 @@ The gateway auto-generate a self-signed certificate, which should be replaced by
 ## To obtain a SSL certificate signed by letsencrypt
 - connect to the running docker container (`docker exec -it <container id> /bin/sh` 
 - by default, you are in the /script directory (`cd /script` otherwize)
-- issue the command `certbot --nginx -d <openimis.domaine>` ... and follow the setup wizzard (provide contact address,...)
+- issue the command `install-certificate.sh` ... and follow the setup wizzard (provide contact address,...)
 - stop/start the container
