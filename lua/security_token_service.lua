@@ -9,4 +9,5 @@ if not user then
   return ngx.redirect("/")
 end
 ngx.log(ngx.INFO, "remote-user "..user)
-ngx.header["remote-user"]=user
+ngx.req.set_header("remote-user",user)
+
