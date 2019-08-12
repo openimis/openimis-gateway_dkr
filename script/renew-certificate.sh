@@ -1,2 +1,3 @@
 #!/bin/sh
-certbot renew --post-hook \"openresty -s reload\"
+echo "`date` Check certificate" >> /var/log/certbot
+certbot renew --post-hook "openresty -s reload"

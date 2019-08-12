@@ -9,7 +9,7 @@ RUN apt-get install -y tzdata
 RUN apt-get update && apt-get install -y certbot python-certbot-nginx
 RUN luarocks install luajson
 COPY lua /lua
-# COPY conf/openimis.conf /etc/nginx/conf.d/default.conf
+COPY conf/openimis.conf /etc/nginx/conf.d/default.conf
 ARG NEW_OPENIMIS_HOST
 RUN echo "Hosting on https://"$NEW_OPENIMIS_HOST
 RUN sed -i  's/NEW_OPENIMIS_HOST/'$NEW_OPENIMIS_HOST'/g' /etc/nginx/conf.d/default.conf
