@@ -9,13 +9,14 @@ RUN apt-get install -y tzdata
 RUN apt-get update && apt-get install -y certbot python-certbot-nginx
 RUN luarocks install luajson
 COPY lua /lua
+RUN mkdir -p /etc/ssl/certs
+RUN mkdir -p /etc/ssl/private
 COPY conf/openimis.conf /script/default.conf
 #COPY conf/openimis.conf /etc/nginx/conf.d/default.conf
 ENV NEW_OPENIMIS_HOST = ""
 ENV LEGACY_OPENIMIS_HOST = ""
 COPY script /script
-RUN mkdir -p /etc/ssl/certs
-RUN mkdir -p /etc/ssl/private
+
 RUN chmod a+x /script/entrypoint.sh
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/localhost.key -out /etc/ssl/certs/localhost.crt -subj "/C=BE/ST=_/L=_/O=_/OU=_/CN=localhost"
 WORKDIR /script
