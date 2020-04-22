@@ -28,5 +28,6 @@ ARG TZ=Europe/Brussels
 ENV TZ=$TZ
 ENV NEW_OPENIMIS_HOST = ""
 ENV LEGACY_OPENIMIS_HOST = ""
+RUN del /f /q C:\openresty\logs\* >NUL
 ENTRYPOINT C:/openresty/entrypoint.bat
 

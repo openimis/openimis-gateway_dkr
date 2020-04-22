@@ -8,4 +8,4 @@ echo "Pointing to legacy openIMIS on https://%LEGACY_OPENIMIS_HOST%"
 
 ping -n 11 ibackend >nul
 
-nginx -g "daemon off;" 
+nginx -g "daemon off;" >CON
