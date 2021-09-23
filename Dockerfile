@@ -11,7 +11,7 @@ RUN luarocks install luajson
 COPY lua /lua
 RUN mkdir -p /etc/ssl/certs
 RUN mkdir -p /etc/ssl/private
-COPY conf/openimis.conf /conf/default.conf
+COPY conf/openimis.conf /conf/openimis.conf
 #COPY conf/openimis.conf /etc/nginx/conf.d/default.conf
 ENV NEW_OPENIMIS_HOST = ""
 ENV LEGACY_OPENIMIS_HOST = ""
