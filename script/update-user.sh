@@ -5,5 +5,5 @@ then
   exit 1
 fi
 BASEDIR=$(dirname "$0")
-sh ${BASEDIR}/remove-user.sh $1
-sh ${BASEDIR}/add-user.sh $1 $2
+sh "${BASEDIR}"/remove-user.sh "$1"
+sh "${BASEDIR}"/add-user.sh "$1" "$2"
