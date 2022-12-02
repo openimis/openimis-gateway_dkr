@@ -3,7 +3,7 @@ ARG NGINX_VERSION=1.22.1
 FROM nginx:${NGINX_VERSION} as build
 
 RUN apt-get update && \
-    apt-get install -y \COPY --from=build /usr/src/nginx-${NGINX_VERSION}/objs/ngx_http_set_misc_module.so /usr/src/nginx-${NGINX_VERSION}/objs/ndk_http_module.so /usr/lib/nginx/modules/
+    apt-get install -y \
         openssh-client \
         git \
         wget \
