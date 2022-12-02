@@ -10,7 +10,9 @@ RUN apt-get install -y tzdata
 COPY conf/openimis.conf /conf/openimis.conf
 ENV NEW_OPENIMIS_HOST = localhost
 COPY script /script
-COPY certs /etc/nginx/ssl/live/$NEW_OPENIMIS_HOST
+COPY certs /etc/nginx/ssl/live/localhost
+RUN cp -r /etc/nginx/ssl/live/localhost /etc/nginx/ssl/live/$NEW_OPENIMIS_HOST
 RUN chmod a+x /script/entrypoint.sh
 WORKDIR /script
 ENTRYPOINT ["/bin/bash","/script/entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
