@@ -3,9 +3,18 @@
 
 Please look for the direction on the openIMIS Wiki: https://openimis.atlassian.net/wiki/spaces/OP/pages/963182705/MO1.1+Install+the+modular+openIMIS+using+Docker
 
+
+new configuation should follow this https://sandro-keil.de/blog/let-nginx-start-if-upstream-host-is-unavailable-or-down/
+
+
+
+
+
+
 The current configuration exposes:
 - the backend apis for external applications under the /api urls
-- the backend apis for openIMIS frontend under the /iapi urls
+- 
+
 
 
 The /api urls are restricted to authenticated users. The showcased authentication mechanism is a basic auth. protocol based on a .htpasswd file located in the /conf MOUNTED volume.
