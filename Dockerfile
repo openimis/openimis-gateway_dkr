@@ -17,4 +17,4 @@ RUN mv /etc/nginx/ssl/live/host /etc/nginx/ssl/live/$NEW_OPENIMIS_HOST
 RUN chmod a+x /script/entrypoint.sh
 WORKDIR /script
 ENTRYPOINT ["/bin/bash","/script/entrypoint.sh"]
-CMD ["openresty", "-g", "daemon off;"]
+CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
