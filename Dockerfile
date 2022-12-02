@@ -10,6 +10,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get install -y tzdata
 COPY conf/openimis.conf /conf/openimis.conf
 ENV NEW_OPENIMIS_HOST=localhost
+ARG NEW_OPENIMIS_HOST=localhost
 COPY script /script
 ADD certs /etc/nginx/ssl/live/host
 RUN mv /etc/nginx/ssl/live/host /etc/nginx/ssl/live/$NEW_OPENIMIS_HOST
