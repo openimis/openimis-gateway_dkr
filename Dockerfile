@@ -1,4 +1,4 @@
-FROM openresty/openresty
+FROM openresty/openresty:bionic
 FROM nginx
 RUN apt-get update 
 ARG TZ=Europe/Brussels
