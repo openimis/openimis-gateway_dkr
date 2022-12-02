@@ -15,6 +15,6 @@ echo "root restapi $ROOT_MOBILEAPI"
 sed -i 's|ROOT_MOBILEAPI|'"$ROOT_MOBILEAPI"'|g' /etc/nginx/conf.d/openIMIS.conf
 
 if [ -e "/etc/letsencrypt/live/$NEW_OPENIMIS_HOST/fullchain.pem" ]; then
-   cp -R /etc/nginx/ssl/live/host /etc/nginx/ssl/live/${NEW_OPENIMIS_HOST}
+   cp -R /etc/nginx/ssl/live/host /etc/letsencrypt/live/${NEW_OPENIMIS_HOST}
 fi
 exec "$@"
