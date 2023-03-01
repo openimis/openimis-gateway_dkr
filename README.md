@@ -1,3 +1,5 @@
+Merge with fe_js
+
 | --- |
 | This repository contains sample material for the gateway of new modularized openIMIS platform. It is dedicated to illustrate the services delivered by the gateway to other components. It is provided withoutany waranty and doesn't address all openIMIS platform security needs. |
 
